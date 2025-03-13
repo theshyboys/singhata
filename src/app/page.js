@@ -11,8 +11,8 @@ export default function Home() {
         <h1 className="text-3xl font-bold mb-6 text-center">QR Code Shopping</h1>
         <p className="mb-8 text-center text-gray-600">Scan a product QR code to start shopping</p>
         
-        <div className="bg-white p-6 rounded-lg shadow-md">
-          <QRScanner />
+        <div className="bg-red p-6 rounded-lg shadow-md">
+           <QRScanner/>
         </div>
         
         <div className="mt-8 text-center">

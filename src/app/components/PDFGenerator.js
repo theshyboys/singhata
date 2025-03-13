@@ -19,7 +19,7 @@ export default function PDFGenerator({ cart, subtotal, tax, total, onComplete })
         // Add company header
         doc.setFontSize(20);
         doc.setTextColor(0, 0, 255);
-        doc.text('สิงห์ท่า ค้าขาย', 105, 15, { align: 'center' });
+        doc.text('Singhata Shop', 105, 15, { align: 'center' });
         
         // Order information
         doc.setFontSize(12);

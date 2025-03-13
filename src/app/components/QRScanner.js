@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { Html5QrcodeScanner } from 'html5-qrcode';
+import {Html5QrcodeScanType} from 'html5-qrcode';
 import { useRouter } from 'next/navigation';
 
 export default function QRScanner() {
@@ -11,12 +12,14 @@ export default function QRScanner() {
   useEffect(() => {
     // Create QR scanner only on client side
     if (typeof window !== 'undefined') {
-      const scanner = new Html5QrcodeScanner('reader', {
+      const scanner = new Html5QrcodeScanner('reader', { facingMode: "ev" }, {
         qrbox: {
           width: 250,
           height: 250,
         },
         fps: 5,
+        supportedScanTypes: [Html5QrcodeScanType.SCAN_TYPE_CAMERA],
+
       });
 
       function success(result) {
