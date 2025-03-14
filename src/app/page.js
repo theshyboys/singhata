@@ -3,7 +3,14 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import QRScanner from './components/QRScanner';
-
+/*
+git init 
+git add .
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/theshyboys/singhata/tree/main.git
+git push -u origin main
+*/
 export default function Home() {
   return (
     <main className="container mx-auto px-4 py-8">

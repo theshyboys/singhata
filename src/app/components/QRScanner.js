@@ -13,16 +13,15 @@ export default function QRScanner() {
     // Create QR scanner only on client side
     //if (typeof window !== 'undefined') {
       
-        const scanner = new Html5QrcodeScanner('reader',  { facingMode: { exact: "environment"} }, {
-        qrbox: {
-          width: 250,
-          height: 250,
-        },
-        fps: 5,
-        
-        supportedScanTypes: [Html5QrcodeScanType.SCAN_TYPE_CAMERA],
-
-      });
+        const scanner = new Html5QrcodeScanner('reader', {
+          fps: 10,
+          qrbox: { width: 250, height: 250 },
+          rememberLastUsedCamera: true,
+          // Use back camera
+          defaultDeviceId: 'environment',
+          // Camera facing mode: environment = back camera
+          facingMode: { exact: "environment" }
+      },/* verbose= */ false);
 
       function success(result) {
         scanner.clear();
