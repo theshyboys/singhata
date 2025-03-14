@@ -21,7 +21,7 @@ export default function QRScanner() {
           defaultDeviceId: 'environment',
           // Camera facing mode: environment = back camera
           facingMode: { exact: "environment" }
-      },/* verbose= */ false);
+      });
 
       function success(result) {
         scanner.clear();

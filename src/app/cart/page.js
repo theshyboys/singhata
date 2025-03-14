@@ -14,7 +14,7 @@ export default function CartPage() {
     return total + (item.price * item.quantity);
   }, 0);
   
-  const tax = subtotal * 0.08; // 8% tax rate
+  const tax = subtotal * 0.07; // 7% tax rate
   const total = subtotal + tax;
   
   const handleCheckout = () => {
@@ -49,7 +49,7 @@ export default function CartPage() {
                   <div className="ml-4 flex flex-1 flex-col">
                     <div className="flex justify-between text-base font-medium text-gray-900">
                       <h3>{item.name}</h3>
-                      <p className="ml-4">${(item.price * item.quantity).toFixed(2)}</p>
+                      <p className="ml-4">THB{(item.price * item.quantity).toFixed(2)}</p>
                     </div>
                     {item.sku && <p className="mt-1 text-sm text-gray-500">SKU: {item.sku}</p>}
                     <div className="flex mt-2 items-center justify-between">
@@ -86,16 +86,16 @@ export default function CartPage() {
               <h2 className="text-lg font-medium mb-4">Order Summary</h2>
               <div className="flex justify-between mb-2">
                 <p>Subtotal</p>
-                <p>${subtotal.toFixed(2)}</p>
+                <p>THB{subtotal.toFixed(2)}</p>
               </div>
               <div className="flex justify-between mb-2">
-                <p>Tax (8%)</p>
-                <p>${tax.toFixed(2)}</p>
+                <p>Tax (7%)</p>
+                <p>THB{tax.toFixed(2)}</p>
               </div>
               <div className="border-t pt-4 mt-4">
                 <div className="flex justify-between mb-4">
                   <p className="text-lg font-medium">Total</p>
-                  <p className="text-lg font-medium">${total.toFixed(2)}</p>
+                  <p className="text-lg font-medium">THB{total.toFixed(2)}</p>
                 </div>
                 <button 
                   onClick={handleCheckout}

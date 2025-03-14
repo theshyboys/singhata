@@ -36,9 +36,9 @@ export default function PDFGenerator({ cart, subtotal, tax, total, onComplete })
           const itemData = [
             item.name,
             item.sku || 'N/A',
-            `$${item.price.toFixed(2)}`,
+            `THB${item.price.toFixed(2)}`,
             item.quantity,
-            `$${(item.price * item.quantity).toFixed(2)}`
+            `THB${(item.price * item.quantity).toFixed(2)}`
           ];
           tableRows.push(itemData);
         });
@@ -55,9 +55,9 @@ export default function PDFGenerator({ cart, subtotal, tax, total, onComplete })
         
         // Add summary information at the bottom
         const finalY = (doc.lastAutoTable.finalY || 45) + 10;
-        doc.text(`Subtotal: $${subtotal.toFixed(2)}`, 150, finalY, { align: 'right' });
-        doc.text(`Tax (8%): $${tax.toFixed(2)}`, 150, finalY + 7, { align: 'right' });
-        doc.text(`Total: $${total.toFixed(2)}`, 150, finalY + 14, { align: 'right' });
+        doc.text(`Subtotal: THB${subtotal.toFixed(2)}`, 150, finalY, { align: 'right' });
+        doc.text(`Tax (7%): THB${tax.toFixed(2)}`, 150, finalY + 7, { align: 'right' });
+        doc.text(`Total: THB${total.toFixed(2)}`, 150, finalY + 14, { align: 'right' });
         
         // Add thank you message
         doc.setFontSize(11);
