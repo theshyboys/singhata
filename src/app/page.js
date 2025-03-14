@@ -14,12 +14,13 @@ export default function Home() {
         <div className="bg-red p-6 rounded-lg shadow-md">
            <QRScanner/>
         </div>
-        
+        {/* 
         <div className="mt-8 text-center">
           <Link href="/cart" className="text-blue-600 hover:underline">
             View Cart
           </Link>
         </div>
+        */}
       </div>
     </main>
   );

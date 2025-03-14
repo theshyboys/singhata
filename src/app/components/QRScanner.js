@@ -11,13 +11,15 @@ export default function QRScanner() {
 
   useEffect(() => {
     // Create QR scanner only on client side
-    if (typeof window !== 'undefined') {
-      const scanner = new Html5QrcodeScanner('reader', { facingMode: "ev" }, {
+    //if (typeof window !== 'undefined') {
+      
+        const scanner = new Html5QrcodeScanner('reader',  { facingMode: { exact: "environment"} }, {
         qrbox: {
           width: 250,
           height: 250,
         },
         fps: 5,
+        
         supportedScanTypes: [Html5QrcodeScanType.SCAN_TYPE_CAMERA],
 
       });
@@ -35,11 +37,12 @@ export default function QRScanner() {
 
       scanner.render(success, error);
 
+
       // Clean up on component unmount
       return () => {
         scanner.clear();
       };
-    }
+    //}
   }, [router]);
 
   return (
