@@ -24,13 +24,25 @@ https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=cre
 
 */
 export default function Home() {
+
+
+  function  CheckLine  () {
+    const ua = navigator.userAgent.toLowerCase();
+    if (ua.indexOf('line') > -1) {
+      alert("กรุณาเปิดลิงก์นี้ผ่านเบราว์เซอร์ภายนอก เช่น Chrome หรือ Safari เพื่อใช้งานกล้อง");
+    }  
+  }
+
   return (
+   
+
     <main className="container mx-auto px-4 py-8">
       <div className="max-w-md mx-auto">
 
         <h1 className="text-3xl font-bold mb-6 text-center">QR Code Shopping</h1>
         <p className="mb-8 text-center text-gray-600">Scan a product QR code to start shopping</p>
-      
+       
+        <CheckLine/>
        <div className="bg-white p-1 rounded-lg shadow-md"> 
            <QRScanner/>
            {/* <QRScan/> */}
