@@ -29,8 +29,20 @@ export default function Home() {
   function  CheckLine  () {
     const ua = navigator.userAgent.toLowerCase();
     if (ua.indexOf('line') > -1) {
-      alert("กรุณาเปิดลิงก์นี้ผ่านเบราว์เซอร์ภายนอก เช่น Chrome หรือ Safari เพื่อใช้งานกล้อง");
-    }  
+      // แนะนำผู้ใช้ให้เปิดลิงก์ผ่าน browser ภายนอก
+      const confirmOpen = confirm("เว็บนี้ต้องใช้กล้อง กรุณาเปิดผ่านเบราว์เซอร์ภายนอก เช่น Chrome หรือ Safari");
+      if (confirmOpen) {
+        const url = encodeURIComponent(window.location.href);
+        // สำหรับ Android: เปิด Chrome
+        if (ua.indexOf('android') > -1) {
+          window.location = `intent://singhata-aq19.vercel.app//#Intent;scheme=https;package=com.android.chrome;end`;
+        }
+        // สำหรับ iOS: เปิด Safari
+        else if (ua.indexOf('iphone') > -1 || ua.indexOf('ipad') > -1) {
+          window.location = window.location.href; // Safari จะเปิดอยู่แล้ว
+        }
+      }
+    }
   }
 
   return (

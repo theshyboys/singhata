@@ -32,7 +32,7 @@ export default function QRScanner3() {
         }
       } catch (err) {
         console.error("Error accessing camera:", err);
-        alert("Error accessing camera:", err);
+        //alert("Error accessing camera:", err);
       }
     };
 
@@ -128,14 +128,15 @@ export default function QRScanner3() {
       
       // Draw scanning frame
       //ctx.strokeStyle = "#2196F3";
-      //ctx.lineWidth = 4;
-      //ctx.strokeRect(frameX, frameY, frameSize, frameSize);
+      ctx.strokeStyle = "rgba(255, 255,255, 1.0)";
+      ctx.lineWidth = 1;
+      ctx.strokeRect(frameX, frameY, frameSize, frameSize);
       
       // Draw corner markers
       const cornerSize = 20;
       ctx.lineWidth = 8;
       
-      ctx.strokeStyle = "rgba(255, 129, 120, 1.0)";
+      ctx.strokeStyle = "rgba(255, 255, 255, 1.0)";
 
       // Top-left corner
       ctx.beginPath();
@@ -173,8 +174,8 @@ export default function QRScanner3() {
       const currentTime = new Date().getTime();
       const scanLineY = frameY + (frameSize * (Math.sin(currentTime / 500) + 1) / 2);
       
-      ctx.strokeStyle = "rgba(255, 129, 120, 0.8)";
-      ctx.lineWidth = 4;
+      ctx.strokeStyle = "rgba(255, 255,255, 1.0)";
+      ctx.lineWidth = 2;
       ctx.beginPath();
       ctx.moveTo(frameX, scanLineY);
       ctx.lineTo(frameX + frameSize, scanLineY);
