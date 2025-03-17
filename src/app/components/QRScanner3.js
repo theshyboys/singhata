@@ -57,12 +57,13 @@ export default function QRScanner3() {
           //drawRect(ctx, code.location);
           setScanResult(code.data);
           setScanning(false);          
+          router.push(`/product/` + code.data);
           cancelAnimationFrame(animationFrame);
           if (stream) {
                stream.getTracks().forEach(track => track.stop());
           }
           
-          router.push(`/product/` + code.data);
+          
          // if (stream) {
          //   stream.getTracks().forEach(track => track.stop());
          // }
@@ -115,9 +116,9 @@ export default function QRScanner3() {
       const frameY = (height - frameSize) / 2;
       
       // Semi-transparent overlay
-      ctx.fillStyle = "rgba(0, 0, 0, 0.0)";
+      //ctx.fillStyle = "rgba(0, 0, 0, 0.0)";
       //ctx.fillStyle = "rgba(233, 196, 62, 0.98)";
-      ctx.fillRect(0, 0, width, height);
+      //ctx.fillRect(0, 0, width, height);
       
      // ctx.fillStyle = "rgba(0, 0, 0, 0.8)";
      // ctx.fillRect(frameX, frameY, frameSize, frameSize);
