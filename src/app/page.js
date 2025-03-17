@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import QRScanner from './components/QRScanner';
+import QRScanner from './components/QRScanner2';
 //import QRScan from './components/QRScan';
 
 /*
@@ -19,6 +19,8 @@ git add .
 git commit -m "first commit"
 git branch -M main
 git push -u origin main
+
+https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme
 
 */
 export default function Home() {
