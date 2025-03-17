@@ -8,7 +8,6 @@
     "start": "next start",
     "lint": "next lint",
     "export": "next export"
-
   },
   "type": "module",
   "dependencies": {
@@ -17,7 +16,8 @@
     "jspdf-autotable": "^5.0.2",
     "next": "15.2.2",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "react-qr-reader": "^3.0.0-beta-1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

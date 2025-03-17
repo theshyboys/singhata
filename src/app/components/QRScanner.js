@@ -13,15 +13,26 @@ export default function QRScanner() {
     // Create QR scanner only on client side
     //if (typeof window !== 'undefined') {
       
-        const scanner = new Html5QrcodeScanner('reader', {
+      const scanner = new Html5QrcodeScanner('reader', {
           fps: 10,
-          qrbox: { width: 250, height: 250 },
+          qrbox: 250,
+          
+          useBarCodeDetectorIfSupported: true,
           rememberLastUsedCamera: true,
+          showTorchButtonIfSupported: true,
+          showZoomSliderIfSupported: true,
+          defaultZoomValueIfSupported: 1.5,
+          supportedScanTypes: [
+              Html5QrcodeScanType.SCAN_TYPE_CAMERA,
+              Html5QrcodeScanType.SCAN_TYPE_FILE,
+          ],
+          
+          //rememberLastUsedCamera: true,
           // Use back camera
           defaultDeviceId: 'environment',
           // Camera facing mode: environment = back camera
           facingMode: { exact: "environment" }
-      });
+      },true);
 
       function success(result) {
         scanner.clear();
@@ -35,7 +46,6 @@ export default function QRScanner() {
       }
 
       scanner.render(success, error);
-
 
       // Clean up on component unmount
       return () => {
