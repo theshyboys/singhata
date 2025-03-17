@@ -1,13 +1,14 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { use, useEffect, useState } from 'react';
 import Image from 'next/image';
 import { useCart } from '../../context/CartContext';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 
 export default function ProductPage({ params }) {
-  const { id } = params;
+  const unwrappedParams = use(params); // unwrap the Promise
+  const id = unwrappedParams.id;
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [quantity, setQuantity] = useState(1);

@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import QRScanner from './components/QRScanner2';
+import QRScanner from './components/QRScanner3';
 //import QRScan from './components/QRScan';
 
 /*
@@ -31,7 +31,7 @@ export default function Home() {
         <h1 className="text-3xl font-bold mb-6 text-center">QR Code Shopping</h1>
         <p className="mb-8 text-center text-gray-600">Scan a product QR code to start shopping</p>
       
-       <div className="bg-red p-6 rounded-lg shadow-md"> 
+       <div className="bg-red p-10 rounded-lg shadow-md"> 
            <QRScanner/>
            {/* <QRScan/> */}
         </div>

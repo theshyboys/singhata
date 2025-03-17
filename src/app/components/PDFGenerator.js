@@ -5,6 +5,7 @@ import { jsPDF } from 'jspdf';
 //import 'jspdf-autotable';
 import { autoTable } from 'jspdf-autotable';
 import { useRouter } from 'next/navigation';
+import font from './RSU_Regular-normal';
 
 export default function PDFGenerator({ cart, subtotal, tax, total, onComplete }) {
   const [status, setStatus] = useState('Generating PDF...');
@@ -15,11 +16,15 @@ export default function PDFGenerator({ cart, subtotal, tax, total, onComplete })
       try {
         setStatus('Creating PDF document...');
         const doc = new jsPDF();
-        
+        doc.addFileToVFS("RSU_Regular-normal.ttf", font); // font คือ base64 string
+        doc.addFont("RSU_Regular-normal.ttf", "RSU_Regular", "normal");
+        doc.setFont("RSU_Regular");
+
+
         // Add company header
         doc.setFontSize(20);
         doc.setTextColor(0, 0, 255);
-        doc.text('Singhata Shop', 105, 15, { align: 'center' });
+        doc.text('สิงห์ท่า ช็อปปิ้ง', 105, 15, { align: 'center' });
         
         // Order information
         doc.setFontSize(12);
@@ -35,6 +40,7 @@ export default function PDFGenerator({ cart, subtotal, tax, total, onComplete })
         cart.forEach(item => {
           const itemData = [
             item.name,
+            //"ปลาส้ม Plasom",
             item.sku || 'N/A',
             `THB${item.price.toFixed(2)}`,
             item.quantity,
