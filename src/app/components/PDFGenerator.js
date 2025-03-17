@@ -55,8 +55,8 @@ export default function PDFGenerator({ cart, subtotal, tax, total, onComplete })
           body: tableRows,
           startY: 45,
           theme: 'grid',
-          styles: { fontSize: 10 },
-          headStyles: { fillColor: [66, 139, 202] }
+          styles: { font : "RSU_Regular",fontSize: 15 },
+          headStyles: { fillColor: [255, 120, 120] }
         });
         
         // Add summary information at the bottom

@@ -120,7 +120,7 @@ export default function QRScanner3() {
       //ctx.fillStyle = "rgba(233, 196, 62, 0.98)";
       //ctx.fillRect(0, 0, width, height);
       
-     // ctx.fillStyle = "rgba(0, 0, 0, 0.8)";
+     // ctx.fillStyle = "rgba(255, 120, 120, 0.8)";
      // ctx.fillRect(frameX, frameY, frameSize, frameSize);
 
       // Clear the scanning area

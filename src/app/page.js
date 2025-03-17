@@ -35,7 +35,7 @@ export default function Home() {
         const url = encodeURIComponent(window.location.href);
         // สำหรับ Android: เปิด Chrome
         if (ua.indexOf('android') > -1) {
-          window.location = `intent://singhata-aq19.vercel.app//#Intent;scheme=https;package=com.android.chrome;end`;
+          window.location = `intent://singhata.vercel.app//#Intent;scheme=https;package=com.android.chrome;end`;
         }
         // สำหรับ iOS: เปิด Safari
         else if (ua.indexOf('iphone') > -1 || ua.indexOf('ipad') > -1) {
@@ -51,7 +51,7 @@ export default function Home() {
     <main className="container mx-auto px-4 py-8">
       <div className="max-w-md mx-auto">
 
-        <h1 className="text-3xl font-bold mb-6 text-center">QR Code Shopping</h1>
+        <h3 className="text-3xl font-bold mb-6 text-center">QR Code Shopping</h3>
         <p className="mb-8 text-center text-gray-600">Scan a product QR code to start shopping</p>
        
         <CheckLine/>
