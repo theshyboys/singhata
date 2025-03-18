@@ -170,3 +170,4 @@ async function fetchProductById(id) {
     
     return products[id] || null;
   }
+
