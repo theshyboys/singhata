@@ -30,8 +30,8 @@ export default function Home() {
     const ua = navigator.userAgent.toLowerCase();
     if (ua.indexOf('line') > -1) {
       // แนะนำผู้ใช้ให้เปิดลิงก์ผ่าน browser ภายนอก
-      const confirmOpen = confirm("เว็บนี้ต้องใช้กล้อง กรุณาเปิดผ่านเบราว์เซอร์ภายนอก เช่น Chrome หรือ Safari");
-      if (confirmOpen) {
+      //const confirmOpen = confirm("เว็บนี้ต้องใช้กล้อง กรุณาเปิดผ่านเบราว์เซอร์ภายนอก เช่น Chrome หรือ Safari");
+      //if (confirmOpen) {
         const url = encodeURIComponent(window.location.href);
         // สำหรับ Android: เปิด Chrome
         if (ua.indexOf('android') > -1) {
@@ -41,20 +41,20 @@ export default function Home() {
         else if (ua.indexOf('iphone') > -1 || ua.indexOf('ipad') > -1) {
           window.location = window.location.href; // Safari จะเปิดอยู่แล้ว
         }
-      }
+      //}
     }
   }
 
   return (
    
 
-    <main className="container mx-auto px-4 py-8">
+    <main className="bg-blue container mx-auto px-4 py-8">
       <div className="max-w-md mx-auto">
 
-        <h3 className="text-3xl font-bold mb-6 text-center">QR Code Shopping</h3>
+        {/* <h3 className="text-3xl font-bold mb-6 text-center">QR Code Shopping</h3> */}
         <p className="mb-8 text-center text-gray-600">Scan a product QR code to start shopping</p>
        
-        <CheckLine/>
+        {/* <CheckLine/> */}
        <div className="bg-white p-1 rounded-lg shadow-md"> 
            <QRScanner/>
            {/* <QRScan/> */}
