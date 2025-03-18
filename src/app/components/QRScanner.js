@@ -17,21 +17,20 @@ export default function QRScanner() {
           fps: 10,
           qrbox: 250,
           
-          useBarCodeDetectorIfSupported: true,
+         // useBarCodeDetectorIfSupported: true,
           rememberLastUsedCamera: true,
-          showTorchButtonIfSupported: true,
-          showZoomSliderIfSupported: true,
-          defaultZoomValueIfSupported: 1.5,
+         // showTorchButtonIfSupported: false,
+         // showZoomSliderIfSupported: false,
+         // defaultZoomValueIfSupported: 1.5,
           supportedScanTypes: [
               Html5QrcodeScanType.SCAN_TYPE_CAMERA,
               Html5QrcodeScanType.SCAN_TYPE_FILE,
           ],
-          
           //rememberLastUsedCamera: true,
           // Use back camera
           defaultDeviceId: 'environment',
           // Camera facing mode: environment = back camera
-          facingMode: { exact: "environment" }
+          facingMode: { exact: 'environment' }
       },true);
 
       function success(result) {
@@ -59,7 +58,7 @@ export default function QRScanner() {
       <div id="reader" className="w-full"></div>
       {scanResult && (
         <div className="mt-4">
-          <p>QR Code detected: {scanResult}</p>
+          {/* <p>QR Code detected: {scanResult}</p> */}
         </div>
       )}
     </div>

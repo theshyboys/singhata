@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import QRScanner from './components/QRScanner3';
+import QRScanner from './components/QRScanner';
 //import QRScan from './components/QRScan';
 
 /*
