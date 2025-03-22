@@ -13,7 +13,7 @@ export default function Header() {
       <div className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
           <Link href="/" className="text-2xl font-bold text-blue-600">
-            Singhata v2.1
+            Singhata v2.2
           </Link>
           
           <Link href="/cart" className="relative">
